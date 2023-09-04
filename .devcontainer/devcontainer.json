@@ -1,5 +1,24 @@
 {
     "name": "OSRS Container",
     "image": "mcr.microsoft.com/devcontainers/python:3",
-    "postCreateCommand": "bash /workspaces/{localWorkspace}/.devcontainer/postStart.sh" // asd
+    "postCreateCommand": "bash /workspaces/osrs/.devcontainer/postStart.sh",
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+    ],
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/nvidia-cuda:1": {}
+    },
+    "forwardPorts": [
+        8070,
+        8080
+    ],
+    "runArgs": [
+        "--gpus",
+        "all"
+        // "--add-host=host.docker.internal:host-gateway"
+    ],
+    "hostRequirements": {
+        "gpu": "optional"
+    }
 }
