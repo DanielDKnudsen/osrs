@@ -1,4 +1,5 @@
 {
     "name": "OSRS Container",
+    "image": "mcr.microsoft.com/devcontainers/python:3",
     "postCreateCommand": "bash /workspaces/{localWorkspace}/.devcontainer/postStart.sh" // asd
 }
