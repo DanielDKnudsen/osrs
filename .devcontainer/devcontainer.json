@@ -1,0 +1,4 @@
+{
+    "name": "OSRS Container",
+    "postCreateCommand": "bash /workspaces/{localWorkspace}/.devcontainer/postStart.sh"
+}
